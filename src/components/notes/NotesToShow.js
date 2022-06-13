@@ -1,15 +1,12 @@
 import React from 'react'
+import Note from './Note';
 
-const NotesToShow = ({notes}) => {
-    const toggleImportanceOf = (id) => {
-        console.log(`importance of ${id} needs to be toggled`);
-      };
+const NotesToShow = ({notes, toggleImportanceOf}) => {
+
   return (
     <ul>
-    {notes.map((note) => (
-      <li onClick={() => toggleImportanceOf(note.id)} key={note.id}>
-        {note.content}
-      </li>
+    {notes.length > 0 && notes.map((note) => (
+     <Note key={note.id} note={note} toggleImportance={toggleImportanceOf}></Note>
     ))}
   </ul>
   )

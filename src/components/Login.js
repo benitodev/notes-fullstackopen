@@ -34,9 +34,9 @@ const Login = ({setUser}) => {
         <Notification message={errorMessage}/>
       <Toggleable buttonLabel="Show login">
         <form onSubmit={handleLogin}>
-        <input type="text" value={username} onChange={({target})=>{setUsername(target.value)}} placeholder="username"/>          
-        <input type="password" value={password} onChange={({target})=>{setPassword(target.value)}} placeholder="password"/>
-        <button value="submit">login</button>
+        <input type="text" name="username" value={username} onChange={({target})=>{setUsername(target.value)}} placeholder="username"/>          
+        <input type="password" name="password" value={password} onChange={({target})=>{setPassword(target.value)}} placeholder="password"/>
+        <button id="login-form-button"value="submit">login</button>
         </form>
       </Toggleable>
         

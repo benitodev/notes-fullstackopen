@@ -7,7 +7,7 @@ const Logout = ({setUser, user}) => {
          noteService.setToken(user.token)
     }
   return (
-    <button onClick={handleLogout}>Logout</button>
+    <button id='logout-button' onClick={handleLogout}>Logout</button>
   )
 }
 

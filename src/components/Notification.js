@@ -2,7 +2,7 @@ import React from 'react'
 
 const Notification = ({message}) => {
   return (
-    <div>{message}</div>
+    <div className='error'>{message}</div>
   )
 }
 

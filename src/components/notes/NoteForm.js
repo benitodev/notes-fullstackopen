@@ -1,19 +1,17 @@
 import React, { useState, useRef } from "react";
-import noteService from "../../services/notes"
 import Toggleable from "../Toggleable";
-const NoteForm = ({ notes, setNotes }) => {
+const NoteForm = ({ createNote }) => {
   const [newNote, setNewNote] = useState("");
   const toggleableRef = useRef()
   const handleSubmit = async(e) => {
     e.preventDefault();
     const noteObject = {
       content: newNote,
-      important: Math.random() < 0.5,
+      important: false,
     };
-   const note = await noteService.create(noteObject)
-   setNewNote("");
-   setNotes([...notes, note]);
-   console.log(toggleableRef)
+
+    createNote(noteObject)
+    setNewNote("");
    toggleableRef.current.toggleVisibility()
   };
 
@@ -25,16 +23,16 @@ const NoteForm = ({ notes, setNotes }) => {
   return (
     <Toggleable buttonLabel="Show notes" ref={toggleableRef}>
      <h3 >Create a new note</h3> 
-    <form onSubmit={handleSubmit}>
+    <form id="note-form" onSubmit={handleSubmit}>
       <input
         type="text"
-        id="note"
-        name="note"
+        id="note-input"
+        name="note-input"
         placeholder="Write your note content"
         value={newNote}
         onChange={handleChange}
         />
-      <button type="submit">save</button>
+      <button name="submit" type="submit">save</button>
     </form>
       </Toggleable>
   );
