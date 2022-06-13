@@ -7,7 +7,7 @@ const setToken = newToken =>{
 }
 const getAll = async () => {
     try {
-        const request = await axios.get(baseUrl)
+        const request = await axios.get(baseLocalhost)
 
         return request.data.content
     } catch (err) {
@@ -20,13 +20,22 @@ const create = async (newNote)=>{
         headers: {Authorization: token}
     }
     try {
-        const response = await axios.post(baseUrl, newNote, config)
-        console.log(response)
+        const response = await axios.post(baseLocalhost, newNote, config)
         return response.data.content
     } catch (err) {
         console.log(err)  
     }
 }
 
+const update = async (id, newObject)=>{
+    const config = {
+        headers: {
+            Authorization: token
+        }
+    }
+    const request = await axios.put(`${baseLocalhost}/${id}`, newObject, config)
+    console.log(request)
+    return request.data.content
+}
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {getAll, create, setToken}
+export default {getAll, create, setToken, update}
