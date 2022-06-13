@@ -1,11 +1,11 @@
 import "./App.css";
-import Note from "./components/notes/Note";
+import Notes from "./components/notes/Notes";
 
 function App() {
   return (
     <div className="App">
       <h1>Notes</h1>
-      <Note></Note>
+      <Notes></Notes>
     </div>
   );
 }
