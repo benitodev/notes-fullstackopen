@@ -9,8 +9,8 @@ App for create notes.
 **This application is simple, but the most important thing is unit tests and e2e. Also the buttons that disappear the content or vice versa.**
 
 ### API
-- **Notes**: https://notes-api-fullstackopen.herokuapp.com/api/notes
-- **Login**: https://notes-api-fullstackopen.herokuapp.com/api/login
+- **Notes**: https://notes-api-fullstackopen-production.up.railway.app/api/notes
+- **Login**: https://notes-api-fullstackopen-production.up.railway.app/api/login
 
 For more explanation of (API) go to the other repository
 
